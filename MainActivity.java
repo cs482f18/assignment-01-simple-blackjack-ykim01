@@ -82,7 +82,7 @@ public class MainActivity  extends AppCompatActivity{
 
                 final TextView playerScore = findViewById(R.id.playerScore);
                 final TextView dealerScore = findViewById(R.id.dealerScore);
-                final TextView outcomeText = findViewById(R.id.outcomeText);
+                final TextView endText = findViewById(R.id.endText);
 
                 //deals first two cards for players
                 for (int i = 2; i < 5; i++) {
@@ -91,7 +91,7 @@ public class MainActivity  extends AppCompatActivity{
                 }
 
                 //reset TextViews to default
-                outcomeText.setText(" ");
+                endText.setText(" ");
                 playerScore.setText("0");
                 dealerScore.setText("0");
 
@@ -116,12 +116,12 @@ public class MainActivity  extends AppCompatActivity{
 
                 //end game early if either player has BlackJack
                 if(game.dealer.hand_value == 21) {
-                    outcomeText.setText(R.string.lost);
+                    endText.setText(R.string.lost);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
                 if(game.player.hand_value == 21) {
-                    outcomeText.setText(R.string.blackjacked);
+                    endText.setText(R.string.blackjacked);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
@@ -143,7 +143,7 @@ public class MainActivity  extends AppCompatActivity{
                 Button hitButton = findViewById(R.id.Hit_Button);
                 Button standButton = findViewById(R.id.Stand_Button);
                 final TextView playerScore = (TextView) findViewById(R.id.playerScore);
-                final TextView outcomeText = (TextView) findViewById(R.id.outcomeText);
+                final TextView endText = (TextView) findViewById(R.id.endText);
 
                 //Deal card
                 game.player.Hit(game.deck);
@@ -172,13 +172,13 @@ public class MainActivity  extends AppCompatActivity{
 
                 //checks to see if player wins or loses
                 if (game.player.hand_value == 21) {
-                    outcomeText.setText(R.string.blackjacked);
+                    endText.setText(R.string.blackjacked);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
 
                 if (game.player.hand_value > 21) {
-                    outcomeText.setText(R.string.lost);
+                    endText.setText(R.string.lost);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
@@ -196,8 +196,9 @@ public class MainActivity  extends AppCompatActivity{
                 Button standButton = findViewById(R.id.Stand_Button);
                 handIndex = 2;
                 final TextView dealerScore = (TextView) findViewById(R.id.dealerScore);
-                final TextView outcomeText = (TextView) findViewById(R.id.outcomeText);
+                final TextView endText = (TextView) findViewById(R.id.endText);
 
+                //Dealer will hit if their hand is less or equal to 17
                 while(game.dealer.hand_value <= 17) {
                     //dealer draws card
                     game.dealer.Hit(game.deck);
@@ -207,25 +208,25 @@ public class MainActivity  extends AppCompatActivity{
                     String dealerCard = game.dealer.hand.get(handIndex).toString();
                     dealerHand.get(handIndex).setImageResource(getResources().getIdentifier(dealerCard, "drawable", getPackageName()));
                     game.dealer.hand_value += game.dealer.hand.get(handIndex).getValue();
-                    handIndex++;
                     dealerScore.setText(String.valueOf(game.dealer.hand_value));
+                    handIndex++;
                 }
 
                 //checks outcome of game
                 if(game.player.hand_value > game.dealer.hand_value || game.dealer.hand_value > 21) {
-                    outcomeText.setText(R.string.won);
+                    endText.setText(R.string.won);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
 
                 if(game.player.hand_value < game.dealer.hand_value && game.dealer.hand_value <= 21) {
-                    outcomeText.setText(R.string.lost);
+                    endText.setText(R.string.lost);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
                 }
 
                 if(game.player.hand_value == game.dealer.hand_value) {
-                    outcomeText.setText(R.string.tied);
+                    gameEnd.setText(R.string.tied);
                     hitButton.setEnabled(false);
                     standButton.setEnabled(false);
 
