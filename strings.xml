@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BlackJack</string>
+    <string name="Hit_Button">Hit</string>
+    <string name="Stand_Button">Stand</string>
+    <string name="Start_Button">Start</string>
+
+    <string name="won">✿Congrats you WON!!✿</string>
+    <string name="lost">you LOST (╯°□°）╯︵ ┻━┻</string>
+    <string name="tied">Tied, try again~</string>
+    <string name="blackjacked"> ♧ YOU GOT BLACKJACK!! ♧</string>
+</resources>

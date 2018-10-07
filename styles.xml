@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PlayerTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">260dp</item>
+
+    </style>
+
+    <style name ="ButtonStyle" parent="PlayerTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/Dark_Blue</item>
+        <item name="android:layout_marginTop">400dp</item>
+    </style>
+
+    <style name = "ImageStyle" parent="AppTheme">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:layout_marginTop">300dp</item>
+    </style>
+
+    <style name = "ImageStyle2" parent="AppTheme">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+
+
+</resources>
