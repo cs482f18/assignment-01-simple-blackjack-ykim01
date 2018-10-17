@@ -10,14 +10,15 @@ package com.example.yonsu.blackjack;
 
 class Card {
 
+    /** Add javadoc description of your instancd variables. E.g., The rank of a Card */
     protected String rank;
     protected String suit;
     protected int value;
 
     /**
      * A parameterized Constructor that instantiates Card's attributes.
-     * @param ranks
-     * @param suits
+     * @param ranks  -- Add parameter description here 
+     * @param suits  -- the suit of the card
      */
     Card(String suits, String ranks) {
         this.rank = ranks;
